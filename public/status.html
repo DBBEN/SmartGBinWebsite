@@ -14,9 +14,9 @@
     <title>Smart GBin</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="../dist/css/style.min.css" rel="stylesheet">
+    <link href="dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -54,17 +54,17 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                             <!-- Light Logo text -->
-                            <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -102,7 +102,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <!-- <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../assets/images/users/profile.png" alt="user" class="rounded-circle" width="31">
+                                <img src="assets/images/users/profile.png" alt="user" class="rounded-circle" width="31">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
@@ -164,10 +164,10 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-0 d-flex align-items-center">
                               <li class="breadcrumb-item"><a href="index.html" class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
-                              <li class="breadcrumb-item active" aria-current="page">Starter Page</li>
+                              <li class="breadcrumb-item active" aria-current="page">Status</li>
                             </ol>
                           </nav>
-                        <h1 class="mb-0 fw-bold">Starter Page</h1> 
+                        <h1 class="mb-0 fw-bold">Status</h1> 
                     </div>
                     <!-- <div class="col-6">
                         <div class="text-end upgrade-btn">
@@ -188,10 +188,37 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                This is some text within a card block.
+                                <div class="d-md-flex align-items-center">
+                                    <!-- <div>
+                                        <h4 class="card-title">GBin Container Levels</h4>
+                                        <h6 class="card-subtitle">Current garbage bin container levels</h6>
+                                    </div> -->
+                                    <div class="ms-auto d-flex no-block align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="circular-progress cp-first">
+                                                <div class="value-container cpText-first">0%</div>
+                                            </div>
+                                            <div class="circular-progress cp-second">
+                                                <div class="value-container cpText-second">0%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ms-auto d-flex no-block align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="circular-progress cp-third">
+                                                <div class="value-container cpText-third">0%</div>
+                                            </div>
+                                            <div class="circular-progress cp-fourth">
+                                                <div class="value-container cpText-fourth">0%</div>
+                                            </div>
+                                        </div>
+                                    </div>    
+            
+                                       
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -231,16 +258,19 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../dist/js/app-style-switcher.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="dist/js/app-style-switcher.js"></script>
     <!--Wave Effects -->
-    <script src="../dist/js/waves.js"></script>
+    <script src="dist/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="../dist/js/sidebarmenu.js"></script>
+    <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="../dist/js/custom.js"></script>
+    <script src="dist/js/custom.js"></script>
+
+
+    <script src="dist/js/pages/statusPage.js"></script>
 </body>
 
 </html>
