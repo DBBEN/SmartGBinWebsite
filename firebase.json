@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "smartgbin",
-    "public": "html",
+    "public": "GBin Website",
     "ignore": [
       "firebase.json",
       "**/.*",
