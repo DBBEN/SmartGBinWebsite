@@ -13,6 +13,7 @@
     <meta name="robots" content="noindex,nofollow">
     <title>Smart GBin</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <!-- Custom CSS -->
@@ -24,6 +25,37 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+    import { getDatabase, onValue, ref } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCMONX2MdE8Il11d_Ee00E4kpuYxsAwfeQ",
+      authDomain: "smart-gbin.firebaseapp.com",
+      databaseURL: "https://smart-gbin-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "smart-gbin",
+      storageBucket: "smart-gbin.appspot.com",
+      messagingSenderId: "767454820018",
+      appId: "1:767454820018:web:a79e7238252dbaeb543bab"
+    };
+    
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const reference = ref(db, 'gbin-1/gps/');
+    onValue(reference, (snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+    })
+    
+
+  </script>
 
 <body>
     <!-- ============================================================== -->
@@ -196,10 +228,8 @@
                                         <h4 class="card-title">GBin Location</h4>
                                         <h6 class="card-subtitle">Current location of Smart GBin</h6>
                                     </div>
-                                    <div class="ms-auto d-flex no-block align-items-center">
-                                        
-                                    </div>
                                 </div>
+                                <div id="map"></div>
                             </div>
                         </div>
                     </div>
@@ -249,6 +279,9 @@
     <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="dist/js/pages/map.js"></script>
 </body>
 
 </html>

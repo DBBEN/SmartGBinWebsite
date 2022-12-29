@@ -25,6 +25,37 @@
 <![endif]-->
 </head>
 
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+    import { getDatabase, onValue, ref } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCMONX2MdE8Il11d_Ee00E4kpuYxsAwfeQ",
+      authDomain: "smart-gbin.firebaseapp.com",
+      databaseURL: "https://smart-gbin-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "smart-gbin",
+      storageBucket: "smart-gbin.appspot.com",
+      messagingSenderId: "767454820018",
+      appId: "1:767454820018:web:a79e7238252dbaeb543bab"
+    };
+    
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const reference = ref(db, 'gbin-1/binStatus/');
+    onValue(reference, (snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+    })
+  </script>
+
+<body>
+
 <body>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -188,36 +219,35 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
+                                <div>
+                                    <h4 class="card-title">GBin Container Levels</h4>
+                                    <h6 class="card-subtitle">Current garbage bin container levels</h6>
+                                </div>
                                 <div class="d-md-flex align-items-center">
-                                    <!-- <div>
-                                        <h4 class="card-title">GBin Container Levels</h4>
-                                        <h6 class="card-subtitle">Current garbage bin container levels</h6>
-                                    </div> -->
-                                    <div class="ms-auto d-flex no-block align-items-center">
-                                        <div class="col-md-6">
-                                            <div class="circular-progress cp-first">
-                                                <div class="value-container cpText-first">0%</div>
-                                            </div>
-                                            <div class="circular-progress cp-second">
-                                                <div class="value-container cpText-second">0%</div>
-                                            </div>
+                                    
+                                    <div class="col-lg-3 circular-container">
+                                        <div class="circular-progress cp-first">
+                                            <div class="value-container cpText-first">0%</div>
                                         </div>
                                     </div>
-                                    <div class="ms-auto d-flex no-block align-items-center">
-                                        <div class="col-md-6">
-                                            <div class="circular-progress cp-third">
-                                                <div class="value-container cpText-third">0%</div>
-                                            </div>
-                                            <div class="circular-progress cp-fourth">
-                                                <div class="value-container cpText-fourth">0%</div>
-                                            </div>
+                                    <div class="col-lg-3 circular-container">
+                                        <div class="circular-progress cp-first">
+                                            <div class="value-container cpText-first">69%</div>
                                         </div>
-                                    </div>    
-            
-                                       
+                                    </div>                                       
+                                    <div class="col-lg-3 circular-container">
+                                        <div class="circular-progress cp-first">
+                                            <div class="value-container cpText-first">0%</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 circular-container">
+                                        <div class="circular-progress cp-first">
+                                            <div class="value-container cpText-first">69%</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
