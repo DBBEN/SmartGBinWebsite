@@ -14658,6 +14658,7 @@ File: scss
   border-radius: 8px;
   display: grid;
   place-items: center;
+  margin: 10px;
 }
 
 .circular-progress {

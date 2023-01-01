@@ -20,8 +20,16 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const reference = ref(db, '/gbin-1/gps');
 onValue(reference, (snapshot) => {
-    const data = snapshot.val();
+    const data = JSON.stringify(snapshot.val());
     console.log(data);
+    var obj = JSON.parse(data);
+    var lat = obj.gpsLat;
+    var long = obj.gpsLong;
+
+    if(lat > 0 && long > 0){
+        let marker = new L.Marker([lat, long]);
+        marker.addTo(map);
+    }
 })
 
 
