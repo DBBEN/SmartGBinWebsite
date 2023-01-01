@@ -1,15 +1,9 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
-import { getDatabase, onValue, ref } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+import {initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+import { getDatabase, onValue, ref } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js"; 
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
-let progressBar = document.querySelector(".cp-first");
-let valueContainer = document.querySelector(".cpText-first");
-
-let progressValue = 0;
-let progressEndValue = 100;
-let speed = 50;
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -26,22 +20,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-const reference = ref(db, 'gbin-1/binStatus');
+const reference = ref(db, 'global/');
 onValue(reference, (snapshot) => {
     const data = snapshot.val();
     console.log(data);
 })
-
-
-let progress = setInterval(() => {
-  progressValue++;
-  valueContainer.textContent = `${progressValue}%`;
-  progressBar.style.background = `conic-gradient(
-      #4d5bf9 ${progressValue * 3.6}deg,
-      #cadcff ${progressValue * 3.6}deg
-  )`;
-  if (progressValue == progressEndValue) {
-    clearInterval(progress);
-  }
-}, speed);
-

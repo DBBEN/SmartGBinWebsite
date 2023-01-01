@@ -28,35 +28,6 @@
 <![endif]-->
 </head>
 
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
-    import { getDatabase, onValue, ref } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyCMONX2MdE8Il11d_Ee00E4kpuYxsAwfeQ",
-      authDomain: "smart-gbin.firebaseapp.com",
-      databaseURL: "https://smart-gbin-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "smart-gbin",
-      storageBucket: "smart-gbin.appspot.com",
-      messagingSenderId: "767454820018",
-      appId: "1:767454820018:web:a79e7238252dbaeb543bab"
-    };
-    
-    
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
-    const reference = ref(db, 'global/');
-    onValue(reference, (snapshot) => {
-        const data = snapshot.val();
-        console.log(data);
-    })
-  </script>
-
 <body>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -212,6 +183,37 @@
                     </div>
                     
                 </div>
+
+                <!-- <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-md-flex align-items-center">
+                                    <div>
+                                        <h4 class="card-title">Collection Summary</h4>
+                                        <h6 class="card-subtitle">Total collections per garbage classification</h6>
+                                    </div>
+                                    <div class="ms-auto d-flex no-block align-items-center">
+                                        <ul class="list-inline dl d-flex align-items-center m-r-15 m-b-0">
+                                            <li class="list-inline-item d-flex align-items-center text-paper-cardboard"><i class="fa fa-circle font-10 me-1"></i> Paper/Cardboard
+                                            </li>
+                                            <li class="list-inline-item d-flex align-items-center text-metal-glass"><i class="fa fa-circle font-10 me-1"></i> Metal/Glass
+                                            </li>
+                                            <li class="list-inline-item d-flex align-items-center text-plastic"><i class="fa fa-circle font-10 me-1"></i> Plastic
+                                            </li>
+                                            <li class="list-inline-item d-flex align-items-center text-trash"><i class="fa fa-circle font-10 me-1"></i> Trash
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="amp-pxl mt-4" style="height: 350px;">
+                                    <div class="chartist-tooltip"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div> -->
                 
             </div>
             
@@ -239,6 +241,7 @@
     <script src="assets/libs/chartist/dist/chartist.min.js"></script>
     <script src="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="dist/js/pages/dashboards/dashboard1.js"></script>
+    <script src="dist/js/pages/home.js" type="module"></script>
 </body>
 
 </html>
