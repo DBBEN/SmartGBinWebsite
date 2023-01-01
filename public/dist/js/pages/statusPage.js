@@ -48,22 +48,22 @@ onValue(reference, (snapshot) => {
     valueContainer4.textContent = `${bin4Percent}%`;
 
     progressBar.style.background = `conic-gradient(
-      #4d5bf9 ${bin1Percent * 3.6}deg,
+      #77dd66 ${bin1Percent * 3.6}deg,
       #cadcff ${bin1Percent * 3.6}deg
     )`;
 
     progressBar2.style.background = `conic-gradient(
-      #4d5bf9 ${bin2Percent * 3.6}deg,
+      #77dd66 ${bin2Percent * 3.6}deg,
       #cadcff ${bin2Percent * 3.6}deg
     )`;
 
     progressBar3.style.background = `conic-gradient(
-      #4d5bf9 ${bin3Percent * 3.6}deg,
+      #77dd66 ${bin3Percent * 3.6}deg,
       #cadcff ${bin3Percent * 3.6}deg
     )`;
 
     progressBar4.style.background = `conic-gradient(
-      #4d5bf9 ${bin4Percent * 3.6}deg,
+      #77dd66 ${bin4Percent * 3.6}deg,
       #cadcff ${bin4Percent * 3.6}deg
     )`;
 
