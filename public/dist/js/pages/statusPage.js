@@ -37,10 +37,15 @@ onValue(reference, (snapshot) => {
     const data = JSON.stringify(snapshot.val());
     console.log(data);
     var obj = JSON.parse(data);
-    var bin1Percent = parseInt((obj.bin1 / (300 - obj.binThreshold.bin1_thresh)) * 100);
-    var bin2Percent = parseInt((obj.bin2 / (300 - obj.binThreshold.bin2_thresh)) * 100);
-    var bin3Percent = parseInt((obj.bin3 / (300 - obj.binThreshold.bin3_thresh)) * 100);
-    var bin4Percent = parseInt((obj.bin4 / (300 - obj.binThreshold.bin4_thresh)) * 100);
+    var bin1Percent = parseInt((358 - obj.bin1) / (358 - obj.binThreshold.bin1_thresh) * 100);
+    var bin2Percent = parseInt((358 - obj.bin2) / (358 - obj.binThreshold.bin2_thresh) * 100);
+    var bin3Percent = parseInt((358 - obj.bin3) / (358 - obj.binThreshold.bin3_thresh) * 100);
+    var bin4Percent = parseInt((358 - obj.bin4) / (358 - obj.binThreshold.bin4_thresh) * 100);
+    //(highest value - current value) / (highest value - lowest value) * 100
+    //var bin1Percent = parseInt((obj.bin1 / (300 - obj.binThreshold.bin1_thresh)) * 100);
+    //var bin2Percent = parseInt((obj.bin2 / (300 - obj.binThreshold.bin2_thresh)) * 100);
+    //var bin3Percent = parseInt((obj.bin3 / (300 - obj.binThreshold.bin3_thresh)) * 100);
+    //var bin4Percent = parseInt((obj.bin4 / (300 - obj.binThreshold.bin4_thresh)) * 100);
     
     valueContainer.textContent = `${bin1Percent}%`;
     valueContainer2.textContent = `${bin2Percent}%`;
